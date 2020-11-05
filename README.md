@@ -1,14 +1,13 @@
-# python-scripts
+# Cluster
 
-Python scripts which I created for my own use
+A collection of Python 3 scripts that organizes photos using EXIF data"
 
 ## Backstory
+I accidentally wiped a hard drive with over 100GB of pictures on it. After running file recovery, the original folder structure, most metadata, and the original filenames were lost.
 
-Once upon a time, I accidentally wiped a hard drive with over 100GB of pictures on it. Thankfully, I was able to recover my photos, but the original folder structure where they were sorted by date was lost as well as most metadata and the original names of the files.
+However, the EXIF data was recovered.
 
-However, the EXIF data was still there.
-
-Too lazy to re-sort them myself, I leveraged python to sort them for me.
+Too lazy to re-sort the photos myself, I wrote some python scripts to sort them for me.
 
 ### fixmodtimefromexif.py
 For each photo in a given folder, this script reads the date of creation from the EXIF data, and uses it to the metadata to the proper the creation and modification dates. This script is not recursive.
