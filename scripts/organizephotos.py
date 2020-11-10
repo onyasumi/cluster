@@ -1,28 +1,31 @@
+import os
 from fixmodtime import fixmodtime
 from orgbydate import orgbydate
 from renshutter import renshutter
 from rmduplicate import rmduplicate
-
-try:
-    import exifread
-except:
-    os.system("pip3 install exif-py")
-    import exifread
 
 def getpath(input):
     if(input):
         print("Please provide a source directory")
     else:
         print("Please provide a destination directory")
-    indir = input()
-    indir = indir.replace("\\", "")
+    dir = input()
+    if(os.name == 'posix'):     # Directory name processing for POSIX systems
+        # Gets rid of extra whitespaces
+        for i in range(len(dir)):
+            if(dir[i] == ' ' and  dir[i-1] != "\\"):
+                dir = dir[:i] + dir[i+1:]
+        
+        # Gets rid of backslashes
+        dir = dir.replace("\\", "")
+    elif(os.name == 'nt'):      # Directory name processing for Windows systems
+        continue
 
 print("Hello! This is Cluster, a collection of Python 3 scripts that organizes photos using EXIF data")
-print("Currently, these scripts only support POSIX systems (No Windows). Please do not leave any extra spaces when inputting directories.")
 indir = getpath(True)
 outdir = getpath(False)
 
 rmduplicate(indir)
 fixmodtime(indir)
 renshutter(indir)
-orgbydate(indir)
+orgbydate(indir, outdir)
