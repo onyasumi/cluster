@@ -3,7 +3,7 @@
 A collection of Python 3 scripts that organizes photos using EXIF data
 
 ## How to Use
-### Mac OS/Linux:
+### Mac OS/Linux
 Run `runcluster.sh`
 ### Windows
 Install Python 3, install the package`exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
