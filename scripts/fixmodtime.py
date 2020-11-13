@@ -1,7 +1,7 @@
 import os
 import time
 import exifread
-from organizephotos import getpath
+import organizephotos
 
 def fixmodtime(indir):
 
@@ -11,12 +11,11 @@ def fixmodtime(indir):
     print("Setting mod dates")
 
     for i in os.listdir(indir):
-        
         infile = indir + "/" + i
-        #ignores non-files
+        # Handles subfolders
         if os.path.isfile(infile) == False:
-            continue
-        #ignores non-image files
+            fixmodtime(infile)
+        # Ignores non-image files
         if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
             continue
         
@@ -30,8 +29,7 @@ def fixmodtime(indir):
             timetaken = [int(x) for x in timetaken]
             timetaken = tuple(timetaken) + (0,0,0)
         except:
-            print("READ ERROR on file: " + i + ": Cannot read EXIF - File is probably corrupt OR exif-py not installed")
-            print("Please type <pip3 install exifread> to install exif-py")
+            print("READ ERROR on file: " + i + ": Cannot read EXIF - File is or does not contain date information")
         
         try:
             timetaken = time.mktime(timetaken)

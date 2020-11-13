@@ -4,9 +4,9 @@ A collection of Python 3 scripts that organizes photos using EXIF data
 
 ## How to Use
 ### Mac OS/Linux
-Run `runcluster.sh`
+Run `runcluster.sh` in Terminal
 ### Windows
-Install Python 3, install the package`exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
+Install Python 3 (make sure to add it to PATH), install the package`exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
 
 ## Backstory
 I accidentally wiped a hard drive with over 100GB of pictures on it. After running file recovery, the original folder structure, most metadata, and the original filenames were lost.

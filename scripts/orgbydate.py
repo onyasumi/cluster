@@ -1,7 +1,7 @@
 import os
 import time
 import shutil
-from organizephotos import getpath
+import organizephotos
 
 def orgbydate(indir, outdir):
     
@@ -15,10 +15,10 @@ def orgbydate(indir, outdir):
 
     for i in os.listdir(indir):
         infile = indir + "/" + i
-        #ignores non-files
+        # Handles subfolders
         if os.path.isfile(infile) == False:
-            continue
-        #ignores non-image files
+            orgbydate(infile, outdir)
+        # Ignores non-image files
         if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
             continue
 
@@ -29,7 +29,7 @@ def orgbydate(indir, outdir):
 
         monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         
-        #Checks if target directory exists
+        # Checks if target directory exists
         targetdir = outdir + "/" + str(year) + "/" + monthnames[month-1] + " " + str(day) + "/"
         if os.path.isdir(targetdir) == False:
             print("Creating directory " + targetdir)

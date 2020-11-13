@@ -1,22 +1,20 @@
 import os
 import hashlib
-from organizephotos import getpath
+import organizephotos
 
-def rmduplicate(indir):
+def rmduplicate(indir, checksums):
 
     while os.path.isdir(indir) == False:
         indir = getpath(True)
     
     print("Finding Duplicates")
 
-    checksums = set()
-
     for i in os.listdir(indir):
         infile = indir + "/" + i
-        #ignores non-files
+        # Handles subfolders
         if os.path.isfile(infile) == False:
-            continue
-        #ignores non-image files
+            rmduplicate(infile, checksums)
+        # Ignores non-image files
         if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
             continue
         
