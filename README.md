@@ -1,19 +1,13 @@
 # Cluster
 
-A collection of Python 3 scripts that organizes photos using EXIF data
+A collection of Python 3 scripts that organizes photos by date taken using EXIF data
 
 ## How to Use
 ### Mac OS/Linux
 Run `runcluster.sh` in Terminal
 ### Windows
-Install Python 3 (make sure to add it to PATH), install the package`exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
+Install Python 3 (make sure to add it to PATH), install the package `exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
 
-## Backstory
-I accidentally wiped a hard drive with over 100GB of pictures on it. After running file recovery, the original folder structure, most metadata, and the original filenames were lost.
-
-However, the EXIF data was recovered.
-
-Too lazy to re-sort the photos myself, I wrote some python scripts to sort them for me.
 
 ### fixmodtime.py
 For each photo in a given folder, this script reads the date of creation from the EXIF data, and uses it to the metadata to the proper the creation and modification dates.
