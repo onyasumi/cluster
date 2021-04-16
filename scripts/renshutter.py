@@ -1,16 +1,9 @@
 import os
 import time
 import exifread
-import organizephotos
 
-def renshutter(indir):
+def renshutter(indir, prefix):
     
-    while os.path.isdir(indir) == False:
-        indir = getpath(True)
-
-    print("Please specify a prefix (i.e. \"DSC_\")")
-    prefix = input()
-
     for i in os.listdir(indir):
         
         infile = indir + "/" + i
@@ -34,5 +27,3 @@ def renshutter(indir):
             print("WRITE ERROR ON " + i + ": Insufficient privileges?")
 
     print("Done")
-    print("Press ENTER to exit")
-    input()

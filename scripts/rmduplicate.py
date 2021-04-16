@@ -1,12 +1,8 @@
 import os
 import hashlib
-import organizephotos
 
 def rmduplicate(indir, checksums):
 
-    while os.path.isdir(indir) == False:
-        indir = getpath(True)
-    
     print("Finding Duplicates")
 
     for i in os.listdir(indir):
@@ -31,6 +27,5 @@ def rmduplicate(indir, checksums):
             os.remove(infile)
         else:
             checksums.add(sha1Hashed)
-
 
     print("Done")

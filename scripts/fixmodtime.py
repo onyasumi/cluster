@@ -1,12 +1,8 @@
 import os
 import time
 import exifread
-import organizephotos
 
 def fixmodtime(indir):
-
-    while os.path.isdir(indir) == False:
-        indir = getpath(True)
 
     print("Setting mod dates")
 
@@ -44,5 +40,3 @@ def fixmodtime(indir):
             print("WRITE ERROR on file " + i + ": Insufficient privileges?")
 
     print("Done")
-    print("Press ENTER to exit")
-    input()

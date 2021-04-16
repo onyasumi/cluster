@@ -1,22 +1,30 @@
 # Cluster
 
-A collection of Python 3 scripts that organizes photos by date taken using EXIF data
+Python3 program that ingests photos from your SD card (or any other media) to your server or NAS (or any other destination directory) and sorts them by date taken in a `year/month+day` structure
 
 ## How to Use
-### Mac OS/Linux
-Run `runcluster.sh` in Terminal
-### Windows
-Install Python 3 (make sure to add it to PATH), install the package `exifread` (`pip3 install exifread`) and run `organizephotos.py` (`python3 ~/scripts/organizephotos.py`)
+Install `python3`
 
+Clone and cd into the repository and run
+
+    pip3 install -r requirements.txt
+
+Then
+
+    python3 runcluster.py
+
+For a fully automated ingestion process, the process can be preconfigured. The configuration can be found at `settings.yml`
+
+## Other Info
 
 ### fixmodtime.py
-For each photo in a given folder, this script reads the date of creation from the EXIF data, and uses it to the metadata to the proper the creation and modification dates.
+Sets the proper creation and modification dates for each photo from EXIF data
 
 ### orgbydate.py
-Organizes each photo in a given folder into a folders based on the date of modification [Year/month+day]. Run fixmodtimefromexif.py before running this.
+Organizes each photo in a given folder into a folders based on the date of modification [Year/month+day]
 
 ### renshutter.py
-This script solves the issue of the files not retaining their original names. It uses the EXIF data of each photo to set the name of the file to the shutter count of the camera (i.e. DSC_3435.NEF, where 3435 is the shutter count). This effectively allows for the files to be sorted based on their order taken.
+Renames each photo to a given prefix and its shutter count (i.e. DSC_3435.NEF, where 3435 is the shutter count).
 
 ### rmduplicate.py
-Removes duplicate files in a given folder by checking SHA1 checksums using a python set.
+Detects and removes duplicate files in a folder using SHA1 checksums.

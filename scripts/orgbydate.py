@@ -1,16 +1,9 @@
 import os
 import time
 import shutil
-import organizephotos
 
 def orgbydate(indir, outdir):
     
-    while os.path.isdir(indir) == False:
-        indir = getpath(True)
-
-    while os.path.isdir(outdir) == False:
-        outdir = getpath(False)
-
     print("Moving files")
 
     for i in os.listdir(indir):

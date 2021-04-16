@@ -1,0 +1,2 @@
+exifread==2.3.2
+ruamel.yaml==0.17.4
