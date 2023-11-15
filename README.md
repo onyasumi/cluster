@@ -1,17 +1,13 @@
 # Cluster
 
-Python3 program that ingests photos from your SD card (or any other media) to your server or NAS (or any other destination directory) and sorts them by date taken in a `year/month+day` structure
+Python3 program that ingests photos an SD card (or any other media) to an output directory and sorts them by date taken in a `year/month+day` structure
 
 ## How to Use
-Install `python3`
+Install `python3` and `python3-virtualenv`
 
-Clone and cd into the repository and run
+Clone and cd into the repository and
 
-    pip3 install -r requirements.txt
-
-Then
-
-    python3 runcluster.py
+    ./run.sh
 
 For a fully automated ingestion process, the process can be preconfigured. The configuration can be found at `settings.yml`
 
