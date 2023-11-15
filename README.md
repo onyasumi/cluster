@@ -9,7 +9,7 @@ Clone and cd into the repository and
 
     ./run.sh
 
-For a fully automated ingestion process, the process can be preconfigured. The configuration can be found at `settings.yml`
+The config file can be found at `settings.yml`
 
 ## Other Info
 

@@ -1,5 +1,4 @@
 ---
-useconfig: False
 source_directory: None
 output_directory: None
 file_prefix: DSC_
