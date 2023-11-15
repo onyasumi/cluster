@@ -4,5 +4,5 @@
 **/__pycache__
 **/**.pyc
 
-/virtual-env
+/venv
 **/.idea
