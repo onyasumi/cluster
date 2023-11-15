@@ -11,7 +11,7 @@ def rmduplicate(indir, checksums):
         if os.path.isfile(infile) == False:
             rmduplicate(infile, checksums)
         # Ignores non-image files
-        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
+        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False) and (i.lower().endswith("arw") == False)):
             continue
         
         print("Checking " + infile)

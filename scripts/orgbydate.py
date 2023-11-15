@@ -12,7 +12,7 @@ def orgbydate(indir, outdir):
         if os.path.isfile(infile) == False:
             orgbydate(infile, outdir)
         # Ignores non-image files
-        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
+        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False) and (i.lower().endswith("arw") == False)):
             continue
 
         unixtime = int(os.path.getmtime(infile))

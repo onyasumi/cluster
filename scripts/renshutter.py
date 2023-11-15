@@ -3,7 +3,9 @@ import time
 import exifread
 
 def renshutter(indir, prefix):
-    
+
+    print("Renaming Files")
+
     for i in os.listdir(indir):
         
         infile = indir + "/" + i
@@ -11,7 +13,7 @@ def renshutter(indir, prefix):
         if os.path.isfile(infile) == False:
             renshutter(infile)
         # Ignores non-image files
-        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False)):
+        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False) and (i.lower().endswith("arw") == False)):
             continue
         
         file = open(infile, "rb")
