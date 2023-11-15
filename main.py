@@ -21,8 +21,8 @@ if not os.path.isdir(srcdir):
 if not os.path.isdir(destdir):
     raise Exception("Destination directory doesn't exist")
 
-if prefix != "":
-    raise ValueError("Prefix is an empty string. Continuing.")
+if prefix == "":
+    print("Prefix is an empty string. Continuing.")
 
 
 print("Configuration OK. Continuing")
