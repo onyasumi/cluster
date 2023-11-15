@@ -1,8 +1,8 @@
 import os
 import hashlib
 
-def rmduplicate(indir, checksums):
 
+def rmduplicate(indir, checksums):
     print("Finding Duplicates")
 
     for i in os.listdir(indir):
@@ -11,9 +11,12 @@ def rmduplicate(indir, checksums):
         if os.path.isfile(infile) == False:
             rmduplicate(infile, checksums)
         # Ignores non-image files
-        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False) and (i.lower().endswith("arw") == False)):
+        if ((i.lower().endswith("jpg") == False) and (i.lower().endswith("jpeg") == False) and (
+                i.lower().endswith("tif") == False) and (i.lower().endswith("tiff") == False) and (
+                i.lower().endswith("cr2") == False) and (i.lower().endswith("nef") == False) and (
+                i.lower().endswith("arw") == False)):
             continue
-        
+
         print("Checking " + infile)
         openfile = open(infile, "rb")
         readfile = openfile.read()
